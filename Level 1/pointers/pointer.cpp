@@ -6,7 +6,7 @@ int main()
     int i = 10;
 
     // '&' -  'address of' operator
-    // gives address of operator 
+    // gives address of variable 
     cout << &i<<endl; 
 
     // p is a pointer which stores the address of int i
@@ -18,7 +18,7 @@ int main()
     cout<<*p<<endl;
 
     int * q = p;
-    // q stores address of i
+    // q also stores address of i
     cout<<q<<endl;
 
     // *q stores value of i
