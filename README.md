@@ -1,1 +1,6 @@
-## DSA practice Problems
+# DSA practice Problems
+
+##CN Course
+
+- Pointers
+- Dynamic Allocation
