@@ -17,4 +17,8 @@ int main()
     char *pc = new char;
 
     cout << *p;
+
+    // if we use new dont forgot to delete
+    delete p;
+    return 0;
 }
