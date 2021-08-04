@@ -3,6 +3,7 @@ using namespace std;
 
 
 // get nth element of fibonacci series
+// 0 1 1 2 3 5 8 13
 int fib(int n)
 {
 
@@ -22,7 +23,7 @@ int fib(int n)
 
 int main()
 {
-    cout << fib(0) << endl;
+    cout << fib(10) << endl;
 
     return 0;
 }
