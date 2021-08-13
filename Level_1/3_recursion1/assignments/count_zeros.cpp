@@ -4,14 +4,14 @@ using namespace std;
 // that are present in the given integer using recursion.
 int countZeros(int n)
 {
-    if(n == 0)
+    if (n == 0)
         return 0;
-    int ans = countZeros(n/10);
-    if(ans == 0){
-        return ans+1;
-    }else{
-        return ans;
-    }
+
+    if (n % 10 == 0)
+        return countZeros(n / 10) + 1;
+    else
+        return countZeros(n / 10);
+    cout<< n<< endl;
 }
 
 int main()
