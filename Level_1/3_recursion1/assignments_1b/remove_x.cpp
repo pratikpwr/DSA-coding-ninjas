@@ -1,6 +1,14 @@
 #include <iostream>
 using namespace std;
 // Given a string, compute recursively a new string where all 'x' chars have been removed.
+
+int lengthOfString(char str[])
+{
+    if (str[0] == '\0')
+        return 0;
+    return 1 + lengthOfString(str + 1);
+}
+
 void removeXHelper(char str[], int size)
 {
 
@@ -14,11 +22,7 @@ void removeXHelper(char str[], int size)
     if (str[size] == 'x')
     {
         // length of string
-        int l = 0;
-        for (int j = 0; str[j] == '\0'; j++)
-        {
-            l++;
-        }
+        int l = lengthOfString(str);
 
         // shift the string elements to left by one
         for (int i = size; i < l; i++)
@@ -30,13 +34,12 @@ void removeXHelper(char str[], int size)
 
 void removeX(char input[])
 {
-    // Write your code here
     removeXHelper(input, 0);
 }
 
 int main()
 {
-    char str[] = "xaabax";
+    char str[] = "pixjfsbxex";
 
     removeX(str);
 

@@ -3,6 +3,13 @@ using namespace std;
 // Given a string, compute recursively a new string where all
 // appearances of "pi" have been replaced by "3.14".
 
+int lengthOfString(char str[])
+{
+    if (str[0] == '\0')
+        return 0;
+    return 1 + lengthOfString(str + 1);
+}
+
 void rp(char input[], int n)
 {
     // return if string have 0 or 1 element
@@ -18,11 +25,7 @@ void rp(char input[], int n)
     {
 
         // length of string
-        int l = 0;
-        for (int j = 0; input[j] != '\0'; j++)
-        {
-            l++;
-        }
+        int l = lengthOfString(input);
 
         // shift element of string by 2 to right
         for (int i = l; i >= n + 2; i--)
