@@ -3,35 +3,56 @@ using namespace std;
 
 void merge(int input[], int si, int mi, int ei)
 {
-    // copy and sort them into new array
-    // copy that arrray into ori array
+    int n1 = mi - si+1;
+    int n2 = si - mi;
 
-    int l = (ei + 1) - si;
-    int array[l];
+    // temp arrays
+    int arr1[n1];
+    int arr2[n2];
 
-    int m = 0;
-    for (int i = si; i < mi; i++)
+    // copy data into temp arr
+    for (int i = 0; i < n1; i++)
+        arr1[i] = input[i + si];
+
+    for (int i = 0; i < n2; i++)
+        arr2[i] = input[mi + 1 + i];
+
+    int i = 0, j = 0, k = si;
+
+    while (i < n1 && j < n2)
     {
-        for (int j = mi + 1; j < ei; j++)
+        if (arr1[i] <= arr2[j])
         {
-            input[i] < input[j] ? array[m] = input[i] : array[m] = input[j];
-            m++;
+            input[k] = arr1[i];
+            i++;
         }
+        else
+        {
+            input[k] = arr2[j];
+            j++;
+        }
+        k++;
     }
 
-    // copy elements of temp arr to ori
-    int i = 0;
-    for (int k = si; k < ei; k++)
+    // if some elements from temp arr remains
+
+    while (i < n1)
     {
-        input[k] = array[i];
+        input[k] = arr1[i];
         i++;
+        k++;
+    }
+    while (j < n2)
+    {
+        input[k] = arr2[j];
+        j++;
+        k++;
     }
 }
 void mergeSortHelper(int input[], int si, int ei)
 {
     // base case:
     // empty or single element array
-
     if (si < ei)
     {
         // split array into 2 parts and sort them
@@ -58,7 +79,7 @@ int main()
 
     int input[] = {5, 3, 6, 4, 2, 7, 1, 8, 9, 0};
     mergeSort(input, length);
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < length; i++)        
     {
         cout << input[i] << " ";
     }
