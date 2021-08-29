@@ -23,7 +23,7 @@ int main()
 {
     string input = "abc";
     string *output = new string[100];
-    int count = subs(input, output);
+    int count = subs(input, output); // this function also return count 
     for (int i = 0; i < count; i++)
         cout << output[i] << endl;
 
